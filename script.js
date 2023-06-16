@@ -1,25 +1,3 @@
-// const key = "e528702f3ae5f7ef199764dc38cd3eba";
-// let town = document.querySelector('#town')
-// let btn = document.querySelector("#searchBtn")
-// let content = document.querySelector('.content')
-
-// async function getWeather() {
-
-// if (town.value === ''){
-//     alert('ВВедите город!')
-//     return
-// }
-// else{
-// const response = await fetch(
-//   `https://api.openweathermap.org/data/2.5/weather?q=${town.value}&appid=${key}&units=metric`
-//   );
-//   const data = await response.json();
-//   content.innerHTML = `
-
-//   `
-// }
-
-// }
 const key = "e528702f3ae5f7ef199764dc38cd3eba";
 let btn = document.querySelector("#searchBtn");
 let town = document.querySelector("#town");
@@ -56,3 +34,17 @@ async function getWeather() {
   }
 }
 btn.addEventListener("click", getWeather);
+
+let enter = document
+  .querySelector("input")
+  .addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      getWeather();
+    }
+  });
+
+// document.querySelector('input').addEventListener('keydown', function(e) {
+//   if (e.keyCode === 13) {
+//     // можете делать все что угодно со значением текстового поля
+//     console.log(this.value);
+//   }
